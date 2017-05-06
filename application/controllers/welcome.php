@@ -2,6 +2,8 @@
 
 class Welcome extends CI_Controller {
 
+	private $template = 'default';
+
 	/**
 	 * Index Page for this controller.
 	 *
@@ -19,7 +21,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view($this->template,array(
+			'content' => 'welcome_message'
+		));
 	}
 }
 
